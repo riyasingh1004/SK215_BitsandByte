@@ -38,6 +38,7 @@ plt.title('Year vs Crime_Registered (Linear Regression)')
 plt.xlabel('Year')
 plt.ylabel('Crime_Registered')
 plt.show()
+#As this does not give the accurate data in this case, so we move for another algorithm.
 
 #Visualising the Polynomial Regression results
 plt.scatter(X, y, color = 'red')
