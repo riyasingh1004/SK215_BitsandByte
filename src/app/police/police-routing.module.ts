@@ -7,10 +7,13 @@ const routes: Routes = [
   {
     path: '',
     component: PolicePage
+<<<<<<< HEAD
   },
   {
     path: 'police-details',
     loadChildren: () => import('./police-details/police-details.module').then( m => m.PoliceDetailsPageModule)
+=======
+>>>>>>> 3b565173bda012eb6e447abdb1bc41aea420aa13
   }
 ];
 

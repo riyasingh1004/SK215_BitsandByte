@@ -7,6 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: AdminPage
+<<<<<<< HEAD
   },
   {
     path: 'admin-details',
@@ -15,6 +16,8 @@ const routes: Routes = [
   {
     path: 'add-police',
     loadChildren: () => import('./add-police/add-police.module').then( m => m.AddPolicePageModule)
+=======
+>>>>>>> 3b565173bda012eb6e447abdb1bc41aea420aa13
   }
 ];
 

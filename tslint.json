@@ -7,11 +7,11 @@
         "statements"
       ]
     },
-    "array-type": false,
-    "arrow-return-shorthand": true,
-    "curly": true,
-    "deprecation": {
-      "severity": "warning"
+    "array-type" : false,
+    "arrow-return-shorthand" : true,
+    "curly" : true,
+    "deprecation" : {
+      "severity" : "warning"
     },
     "component-class-suffix": [true, "Page", "Component"],
     "contextual-lifecycle": true,
