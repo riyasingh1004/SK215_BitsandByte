@@ -1,20 +1,50 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <form>
+    <ion-card size-md="6" offset-md="3">
+      <ion-grid>
+        <ion-row color="primary" justify-content-center>
+          <ion-col align-self-center size-md="6" offset-md="3">
+            <div style="text-align:center;">
+              <h1 style="color:#5589FA;"><b>WELCOME!!</b></h1>
+            </div >
+            <div padding>
+              <p></p>
+              <ion-item>
+                <ion-label position = "floating">EMAIL</ion-label>
+                 <ion-input name="email" type="email"></ion-input>
+              </ion-item>
+              <p></p>
+              <ion-item>
+                <ion-label position = "floating">PASSWORD</ion-label>
+                <ion-input name="password" type="password" ></ion-input>
+              </ion-item>
+            </div>
+            
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3"> 
+            <ion-button type='submit' href='admin-main' color="secondary" expand="block"><ion-icon name="log-in-sharp"></ion-icon>
+              Login</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-row>
+        <ion-col>
+          <a href="">General users</a>
+        </ion-col>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+      </ion-row>
+    </ion-card>
+    
+  </form>
+    
 </ion-content>
