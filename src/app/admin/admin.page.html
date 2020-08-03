@@ -1,81 +1,54 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>admin</ion-title>
+    <ion-title><h1><b>Admin Home</b></h1></ion-title>
+    <ion-buttons slot="start">
+    <ion-back-button text="Logout" icon="remove-circle"
+    defaultHref="/auth">
+    </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button routerLink='requests'>
+        <ion-icon name="document-attach-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-<<<<<<< HEAD
-  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-    <ion-grid>
-      <ion-row>
-        <ion-col size-sm="6" offset-sm="3"> 
-        <div style="text-align:center">
-         <h1 >WELCOME!!</h1>
-      </div>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size-sm="6" offset-sm="3">
-      <ion-list>
-        <ion-item>
-          <ion-label position="floating">User ID</ion-label>
-          <ion-input type="text" ngModel name="userid" required maxlength="8" #useridCtrl="ngModel" ></ion-input>
-        </ion-item>
-        <ion-item
-                *ngIf="!useridCtrl.valid && useridCtrl.touched"
-                lines="none"
-              >
-                <ion-label>
-                  Should be a valid User ID
-                </ion-label>
-              </ion-item>
-        <ion-item>
-          <ion-label position="floating">Password</ion-label>
-          <ion-input type="password" ngModel name="password" required minlength="6" #passwordCtrl="ngModel"></ion-input>
-        </ion-item>
-        <ion-item
-                *ngIf="!passwordCtrl.valid && passwordCtrl.touched"
-                lines="none"
-              >
-                <ion-label>
-                  Should be of at least 6 characters
-                </ion-label>
-              </ion-item>
-      </ion-list>
-     </ion-col>
-     </ion-row>
-     <ion-row>
-      <ion-col size-sm="6" offset-sm="3"> 
-      <div style="text-align:center">
-       <h1 >Login as</h1>
-    </div>
-      </ion-col>
-    </ion-row>
-     <ion-row>
-      <ion-col size-sm="6" offset-sm="3">
-        <ion-button color="primary" type="submit" expand="block" [disabled]="!f.valid">
-          AUTHORITY
-        </ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size-sm="6" offset-sm="3"> 
-      <div style="text-align:center">
-       <h1 >Or Enter as</h1>
-    </div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size-sm="6" offset-sm="3">
-        <ion-button type="button" color="primary" expand="block" (click)="openUserHome()">
-        GENERAL USER
-        </ion-button>
-      </ion-col>
-    </ion-row>
-     </ion-grid>
-     </form>
-=======
-
->>>>>>> 3b565173bda012eb6e447abdb1bc41aea420aa13
+<ion-content class="ion-padding">
+       <ion-grid>
+         <ion-row>
+           <ion-col>
+            <ion-searchbar placeholder="Filter Names"></ion-searchbar>
+           </ion-col>
+         </ion-row>
+         <ion-row>
+           <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+             <ion-list>
+               <ion-item-sliding *ngFor="let data of loadedpolice" [routerLink]="[data.policeid]"
+               #slidingpolice>
+               <ion-item>
+                 <h2>{{ data.name }}</h2>
+               </ion-item>
+               <ion-item-options>
+                <ion-item-option
+                  color="danger"
+                  (click)="onDeletepolice(data.policeid, slidingpolice)"
+                >
+                  <ion-icon name="trash" slot="icon-only"></ion-icon>
+                </ion-item-option>
+              </ion-item-options>
+               </ion-item-sliding>
+             </ion-list>
+           </ion-col>
+         </ion-row>
+         <ion-row>
+          <ion-col size-sm="8" offset-sm="2">
+          
+              <ion-button fill="clear" routerLink='add-police'>
+                <ion-icon name="add" slot="icon-only"></ion-icon>
+              </ion-button>
+          
+          </ion-col>
+        </ion-row>
+       </ion-grid>
 </ion-content>

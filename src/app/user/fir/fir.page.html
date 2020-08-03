@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><h1><b>FIR FORM</b></h1></ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back" defaultHref="/user">
+      </ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+<ion-grid>
+  <ion-row>
+    <ion-col size-sm="6" offset-sm="3">
+     <ion-item>
+       <ion-label position="floating"><h1>Name</h1></ion-label>
+       <ion-input type="text" ngModel name="username" required minlength="6"></ion-input>
+     </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size-sm="6" offset-sm="3">
+     <ion-item>
+       <ion-label position="floating"><h1>Aadhar NO</h1></ion-label>
+       <ion-input type="text" ngModel name="address" required minlength="12" maxlength="12"></ion-input>
+     </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size-sm="6" offset-sm="3">
+     <ion-item>
+       <ion-label position="floating"><h1>Phone NO</h1></ion-label>
+       <ion-input type="number" ngModel name="phone" required minlength="10" maxlength="12"></ion-input>
+     </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size-sm="6" offset-sm="3">
+     <ion-item>
+       <ion-label position="floating"><h1>Complaint Title</h1></ion-label>
+       <ion-input type="text" ngModel name="title" required minlength="6"></ion-input>
+     </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size-sm="6" offset-sm="3">
+     <ion-item>
+       <ion-label position="floating"><h1>Complaint Details</h1></ion-label>
+       <ion-textarea type="text" ngModel name="complaint" required minlength="50"></ion-textarea>
+     </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size-sm="6" offset-sm="3">
+     <ion-item>
+       <ion-label position="floating"><h1>Police Station Pin</h1></ion-label>
+       <ion-select placeholder="Select One" ngModel name="pin">
+        <ion-select-option value="560082">560082</ion-select-option>
+        <ion-select-option value="827012">827012</ion-select-option>
+        <ion-select-option value="612353">612353</ion-select-option>
+        <ion-select-option value="452218">452218</ion-select-option>
+        <ion-select-option value="123456">123456</ion-select-option>
+        <ion-select-option value="456327">456327</ion-select-option>
+        <ion-select-option value="589921">589921</ion-select-option>
+        <ion-select-option value="827006">827006</ion-select-option>
+      </ion-select>
+     </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size-sm="6" offset-sm="3">
+    <ion-button type="submit" expand="block" [disabled]="!f.valid"><b>SUBMIT</b></ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</form>
+</ion-content>

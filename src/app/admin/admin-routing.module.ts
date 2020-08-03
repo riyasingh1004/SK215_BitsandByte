@@ -7,18 +7,21 @@ const routes: Routes = [
   {
     path: '',
     component: AdminPage
-<<<<<<< HEAD
-  },
-  {
-    path: 'admin-details',
-    loadChildren: () => import('./admin-details/admin-details.module').then( m => m.AdminDetailsPageModule)
   },
   {
     path: 'add-police',
     loadChildren: () => import('./add-police/add-police.module').then( m => m.AddPolicePageModule)
-=======
->>>>>>> 3b565173bda012eb6e447abdb1bc41aea420aa13
-  }
+  },
+  {
+    path: 'requests',
+    loadChildren: () => import('./requests/requests.module').then( m => m.RequestsPageModule)
+  },
+  {
+    path:':policeId',
+    loadChildren: () => import('./admin-details/admin-details.module').then( m => m.AdminDetailsPageModule)
+  },
+ 
+  
 ];
 
 @NgModule({

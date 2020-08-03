@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><h1><b>ADHVESHA</b></h1></ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back" defaultHref="/auth">
+      </ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+  <ion-row>
+    <ion-col size-sm="6" offset-sm="3"> 
+    <div style="text-align:center">
+     <h1><b>WELCOME!!!</b></h1>
+  </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size-sm="6" offset-sm="3"> 
+    <div style="text-align:center">
+     <h1 ><b>Select your query here</b></h1>
+  </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size-sm="6" offset-sm="3">
+      <ion-button color="primary" expand="block" (click)=presentActionSheet()><b>Press me!!</b></ion-button>
+    </ion-col>
+  </ion-row>
+      
+        <ion-img src="assets/img/bg.png"></ion-img>
+      
+    
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><h1><b>Requests</b></h1></ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back">
+      </ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+<ion-grid>
+  <ion-row>
+  <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+    <ion-list>
+    <ion-card *ngFor="let data of loadedInfo">
+      <ion-card-header>
+        <ion-card-title> FIR ID: {{data.detailid }}</ion-card-title>
+        <ion-card-subtitle>{{ data.details }}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{ data.resource }}
+      </ion-card-content>
+
+      <ion-item>
+        <ion-button expand="block" fill="clear" (click)="showApproval()"><b>Approve</b></ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-button expand="block" fill="clear" (click)="showDisaproval()"><b>Disapprove</b></ion-button>
+      </ion-item>
+    </ion-card>
+    </ion-list>
+  </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

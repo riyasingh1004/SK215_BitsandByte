@@ -1,9 +1,90 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>add-police</ion-title>
+    <ion-title><h1><b>Update Official Data</b></h1></ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back"
+      defaultHref="/admin">
+      </ion-back-button>
+      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="ion-padding">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+       <ion-item>
+         <ion-label position="floating"><h1>Name</h1></ion-label>
+         <ion-input type="text" ngModel name="name" required minlength="6"></ion-input>
+       </ion-item>
+      </ion-col >
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+       <ion-item>
+         <ion-label position="floating"><h1>User ID</h1></ion-label>
+         <ion-input type="text" ngModel name="userid" required minlength="6"></ion-input>
+       </ion-item>
+      </ion-col >
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+       <ion-item>
+         <ion-label position="floating"><h1>Password</h1></ion-label>
+         <ion-input type="password" ngModel name="password" required minlength="6"></ion-input>
+       </ion-item>
+      </ion-col >
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+       <ion-item>
+         <ion-label position="floating"><h1>Address</h1></ion-label>
+         <ion-textarea type="text" ngModel name="address" required minlength="6"></ion-textarea>
+       </ion-item>
+      </ion-col >
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+       <ion-item>
+         <ion-label position="floating"><h1>Phone No</h1></ion-label>
+         <ion-input type="number" ngModel name="phoneno" required maxlength="12"></ion-input>
+       </ion-item>
+      </ion-col >
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+       <ion-item>
+         <ion-label position="floating"><h1>Police Station Pin</h1></ion-label>
+         <ion-select placeholder="Select One" ngModel name="bloodgroup">
+          <ion-select-option value="560082">560082</ion-select-option>
+          <ion-select-option value="827012">827012</ion-select-option>
+          <ion-select-option value="612353">612353</ion-select-option>
+          <ion-select-option value="452218">452218</ion-select-option>
+          <ion-select-option value="123456">123456</ion-select-option>
+          <ion-select-option value="456327">456327</ion-select-option>
+          <ion-select-option value="589921">589921</ion-select-option>
+          <ion-select-option value="827006">827006</ion-select-option>
+        </ion-select>
+       </ion-item>
+      </ion-col >
+    </ion-row>
+    <ion-row>
+    <ion-col size-sm="6" offset-sm="3">
+    <ion-item>
+      <ion-label><h1>Gender</h1></ion-label>
+      <ion-select placeholder="Select One" ngModel name="gender">
+        <ion-select-option value="Female">Female</ion-select-option>
+        <ion-select-option value="Male">Male</ion-select-option>
+      </ion-select>
+    </ion-item>
+    </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+         <ion-button type="submit" color="primary" expand="block" [disabled]="!f.valid">ADD</ion-button>
+      </ion-col >
+    </ion-row>
+  </ion-grid>
+  </form>
 </ion-content>

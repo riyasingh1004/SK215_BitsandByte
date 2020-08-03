@@ -1,9 +1,72 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>police-details</ion-title>
+    <ion-title><h1><b>Query Details</b></h1></ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back" defaultHref="/police">
+      </ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="primary">
+        <ion-button routerLink='add-police' (click)="SaveInfo()">
+          <ion-icon name="checkmark-done-outline" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+  <ion-grid>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-row>
+      <ion-col size-sm="8" offset-sm="2">
+       <h1>{{ loadeduser.name }}</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="8" offset-sm="2">
+        <ion-badge color="danger" position="floating">Aadhar</ion-badge>
+       <ion-label><h1>{{ loadeduser.address }}</h1></ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="8" offset-sm="2">
+        <ion-badge color="danger" position="floating">Issue</ion-badge>
+       <ion-label><h1>{{loadeduser.title}}</h1></ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="8" offset-sm="2">
+        <ion-badge color="danger" position="floating">Details</ion-badge>
+       <ion-label>{{ loadeduser.complaint }}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="8" offset-sm="2">
+        <ion-badge color="danger" position="floating">Phone</ion-badge>
+       <ion-label><h1>{{ loadeduser.phone }}</h1></ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+       <ion-item>
+         <ion-label position="floating"><h1>Evidence/Investigation</h1></ion-label>
+         <ion-textarea type="text" ngModel name="add" required minlength="6"></ion-textarea>
+       </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+       <ion-item>
+         <ion-label position="floating"><h1>Resources required(Optional)</h1></ion-label>
+         <ion-textarea type="text" ngModel name="resource"></ion-textarea>
+       </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+       <ion-button type="submit"><b>Request</b></ion-button>
+      </ion-col>
+    </ion-row>
+    </form>
+  </ion-grid>
 
 </ion-content>

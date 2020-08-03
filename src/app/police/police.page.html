@@ -1,9 +1,40 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>police</ion-title>
+    <ion-title><h1><b>{{loadedpolice.name}}</b></h1></ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Logout" icon="remove-circle"
+      defaultHref="/auth">
+      </ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="primary">
+        <ion-button routerLink="models">
+          <ion-icon name="grid-outline" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+ <ion-grid>
+   <ion-row>
+     <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+       <ion-list>
+         <ion-item-sliding *ngFor="let data of loadedusers" [routerLink]="[data.userid]" #slidinguser>
+      <ion-item >
+        <h2>{{ data.title}}</h2>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option
+          color="danger"
+          (click)="onDeleteUser(data.userid, slidinguser)"
+        >
+          <ion-icon name="trash" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+       </ion-item-sliding>
+      </ion-list>
+     </ion-col>
+   </ion-row>
+ </ion-grid>
 
 </ion-content>
